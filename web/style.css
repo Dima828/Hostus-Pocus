@@ -120,11 +120,14 @@ ol{
     max-width: 1050px;
     width: 100%;
     margin-inline: auto;
+    margin-bottom: 180px;
+    padding-inline: 20px;
 }
 
 .banner__inner{
     display: flex;
     column-gap: 110px;
+    flex-wrap: wrap;
 }
 
 .banner__title{
@@ -147,6 +150,126 @@ ol{
 
 .banner__button:hover{
     background-color: #fd5b5b;
+}
+
+/* dignities */
+
+.dignities{
+    max-width: 1120px;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+.dignities__inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 150px;
+}
+
+.dignities__item{
+    max-width: 480px;
+    max-height: 260px;
+}
+
+.dignities__column li:not(.red__card){
+    border: 2px solid rgb(197, 197, 197, 15%);
+    border-radius: 6px;
+}
+
+.item__inner{
+    padding: 55px 90px 38px 30px;
+}
+
+.dignities__img{
+    margin-bottom: 15px;
+}
+
+.dignities__item-title{
+    margin-bottom: 13px;
+    font-size: 18px;
+}
+
+.dignities__column .dignities__item:first-child{
+    margin-bottom: 130px;
+}
+
+.dignities__item.first:nth-child(2){
+    margin-bottom: 130px;
+}
+
+.dignities__item.second{
+    margin-top: 130px;
+}
+
+.red__card{
+    background-color: var(--color-red);
+    border-radius: 6px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.red__card::after{
+    content: '';
+    max-width: 200px;
+    aspect-ratio: 1;
+    width: 100%;
+    position: absolute;
+    top: -87px;
+    left: -100px;
+    z-index: -1;
+    border-radius: 50%;
+    opacity: .5;
+    background-color: var(--color-orange);
+}
+
+.red__card::before{
+    content: '';
+    max-width: 280px;
+    aspect-ratio: 1;
+    width: 100%;
+    position: absolute;
+    top: -100px;
+    right: -191px;
+    z-index: -1;
+    border-radius: 50%;
+    opacity: .4;
+    background-color: #C00000;
+}
+
+.red__card .dignities__item-title, .red__card .dignities__item-subtitle{
+    color: var(--color-white);
+}
+
+@media (max-width: 1050px) {
+    .banner__inner{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .dignities__inner{
+        grid-template-columns: 1fr;
+        column-gap: 10px;
+    }
+
+    .dignities__item{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .dignities__column .dignities__item:first-child{
+        margin-bottom: 80px;
+    }
+    
+    .dignities__item.first:nth-child(2){
+        margin-bottom: 80px;
+    }
+    
+    .dignities__item.second{
+        margin-top: 80px;
+    }
 }
 
 @media (max-width: 780px) {
